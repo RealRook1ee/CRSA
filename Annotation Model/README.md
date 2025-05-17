@@ -51,19 +51,19 @@ Frameworks used:
 
 This model is designed to annotate raw user-system dialogues in CRSA format using instruction-based prompting. It follows the **instruction-tuning format** used by LLaMA-Factory, where each sample includes:
 
-- `instruction`: task description + schema constraint
-- `input`: raw dialogue content
-- `output`: structured JSON annotation in CRSA format
+- instruction: task description + schema constraint
+- input: raw dialogue content
+- output: structured JSON annotation in CRSA format
 
 To generate annotations for new dialogues:
 
-```bash
+bash
 python run_inference.py \
   --input raw_dialogues.json \
   --output annotated_results.json \
   --model_dir ./model/checkpoint
 
-##🔹 Input Format
+## 🔹 Input Format
 Each input sample must be a dictionary in the following structure:
 
 {
@@ -72,7 +72,7 @@ Each input sample must be a dictionary in the following structure:
   "output": "{ \"Context\": {...}, \"Dialogue\": {...}, \"Slots\": {...} }"
 }
 
-##📚 Notes
+## 📚 Notes
 This model was trained using LLaMA-Factory with LoRA and instruction-tuning format.
 
 You may batch multiple samples into one .json list file for inference.
@@ -92,3 +92,4 @@ Please download it from the following link:
 After downloading, place it in:
 
 CRSA/Annotation Model/model/adapter_model.safetensors
+把上述内容整理成README.md的格式输出
