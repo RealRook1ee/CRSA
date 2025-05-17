@@ -1,0 +1,170 @@
+System Dialogue Behaviours,System response (Chinese corpus),System response (translation)
+demand_departure,请问您从哪个城市出发？,May I know your departure city?
+demand_destination,请问您要飞往哪里？,What is your destination?
+demand_departure_time,您希望什么时候出发？,When would you like to depart?
+demand_airlines,您有偏好的航空公司吗？,Do you have any preferred airlines?
+demand_cabin,您希望选择什么舱位？经济舱还是商务舱？,"Which cabin class do you prefer, economy or business?"
+demand_price,您的预算范围是多少？,What’s your budget range?
+demand_ticket_num,您需要几张票？,How many tickets do you need?
+demand_passenger_info,请提供乘机人姓名和联系方式。,Please provide the passenger's name and contact information.
+recommend_flight_options,我为您找到以下航班，请您选择。,I’ve found the following flights for you. Please make a choice.
+recommend_cheapest,这是当前最便宜的一班航班。,This is currently the cheapest available flight.
+recommend_fastest,这是最早到达目的地的航班。,This flight gets you to your destination the fastest.
+guide_fill_slot,请您补充一下出发城市信息。,Could you please tell me your departure city?
+guide_next_stage,接下来请您选择一班合适的航班。,"Next, please choose a suitable flight."
+guide_payment,请您完成支付以完成预订。,Please proceed to payment to finalize the booking.
+confirm_departure,您确认是从上海出发吗？,"Just to confirm, is your departure city Shanghai?"
+confirm_destination,您是要飞往成都吗？,Are you flying to Chengdu?
+confirm_time,您希望的是下周一上午出发，对吗？,"You want to depart next Monday morning, right?"
+confirm_selection,请确认是否选择该航班进行预订？,Please confirm if you'd like to book this flight.
+confirm_booking,信息已确认，请问是否现在为您下单？,All info is confirmed. Shall I book it now?
+booking_success,预订成功，您的电子票已发送至邮箱。,Booking successful! Your e-ticket has been sent to your email.
+booking_failure,抱歉，预订失败，该航班已售罄。,"Sorry, booking failed. The flight is sold out."
+provide_summary,以下是您预订的详细信息，请确认。,Here are your booking details. Please confirm.
+end_conversation,感谢使用本系统，祝您旅途愉快！,Thank you for using our service. Have a pleasant trip!
+unclear_demand_price,"请问您是想选择更便宜的机票吗？
+请问您是想选择更贵的航班吗？
+请问您是想选择价格较低的机票吗
+请问您是想选择价格更高的机票吗？","Are you looking for a more affordable flight ticket?
+Would you like to choose a more expensive flight?
+Do you prefer a ticket that is less expensive?
+Are you interested in a ticket with a higher price?"
+unclear_demand_cabin,"请问您是想选择公务舱的机票吗？
+请问您是想选择头等舱的机票吗？
+请问您是想选择商务舱的机票吗？
+请问您说的是舱位吗
+请问您想选择什么舱位","Are you interested in a business class ticket?
+Would you like to choose a first-class seat?
+Are you considering flying in premium economy class?
+Do you mean the type of seat?
+What class of seat would you like to choose?"
+unclear_demand_airlines,"请问您是想选择购买山航的机票吗？
+请问您是想选择购买南航的机票吗？
+请问您是想选择购买东航的机票吗？
+请问您是想选择购买国航的机票吗？
+请问您是想选择东方航空的机票吗？
+请问您是想选择除春秋航空外其他航司的机票吗","Are you interested in purchasing a ticket from Shandong Airlines?
+Would you like to choose a ticket from China Southern Airlines?
+Are you considering buying a China Eastern Airlines ticket?
+Would you like to choose a ticket from Air China?
+Are you interested in choosing a ticket from China Eastern Airlines?
+Are you interested in choosing a ticket from an airline other than Spring Airlines?"
+unclear_demand_destination,"请问您说的是目的地吗？
+请问您的目的地是XX还是XX？
+请问您的目的地是敦煌吗？","Are you referring to the destination?
+Is your destination XX or XX?
+Are you going to Dunhuang?"
+unclear_demand_departure_time,"请问您说的是出发时间吗？
+请问您是要选择晚上出发的航班吗？
+是九月二十九日，请问您的出发时间是9月29日吗？","Are you referring to the departure time?
+Would you like to choose a flight that leaves in the evening?
+It's the 29th of September. Is your departure scheduled for September 29th?"
+unclear_demand_ticket,"请问您是要选择第二趟航班吗？
+请问您想购买的是哪张机票？
+请问您想选择哪一趟航班？
+请问您想选择第一个航班吗？
+请问您是想选择第一个选项吗？
+请问您是要选择奥凯航空的航班吗？
+请问您是要选择第二个航班吗？
+请问您是要选择19:00出发的航班吗？
+请问您是要选择第一张机票吗？
+请问您是要选择第二张机票吗？
+14:00的航班到达时间为16:25，请问您是要选择这趟航班吗？
+请问您想选择第一个航班吗？
+请问您是要选择22:10出发的东方航空航班吗？
+请问您是要选择16:45出发的航班吗？
+请问您是想选择购买南航的机票吗？","Are you interested in the second flight option?
+Which ticket would you like to purchase?
+Which flight would you like to choose?
+Are you interested in the first flight option?
+Is the first option the one you want?
+Are you interested in choosing an Okay Airways flight?
+Would you like to choose the second flight?
+Do you want to select the flight that leaves at 19:00?
+Are you thinking about the first ticket?
+Would you like to choose the second ticket?
+The flight departing at 14:00 arrives at 16:25. Is this the flight you want?
+Would you like to choose the first flight?
+Are you interested in the China Eastern Airlines flight that departs at 22:10?
+Are you interested in the flight that departs at 16:45?
+Are you interested in purchasing a ticket from China Southern Airlines?"
+unclear_demand_departure,"请问您说的是出发地吗？
+请问您的出发地是北京还是天津？
+请问您的出发地是贵阳吗？","Are you referring to the departure city?
+Is your departure location going to be Beijing or Tianjin?
+Is Guiyang your departure location?"
+unclear_demand_destination&departure_time,请问您说的是目的地和出发时间吗？,Are you asking about the destination and when you will be leaving?
+unclear_demand_departure&destination,请问您说的是出发地和目的地吗？,Is it the departure city and the destination you're asking about?
+default_demand_time,"为您查询明天从沈阳到成都的机票可以吗
+为您查询最近的航班可以吗
+为您查询明天的航班可以吗","Would you like me to check the flights from Shenyang to Chengdu for tomorrow?
+Shall I look up the nearest flights for you?
+Can I check the flights for tomorrow for you?"
+default_demand_airlines,为您查询国航和东航的航班可以吗,Would you like me to check the flights for Air China and China Eastern Airlines?
+default_demand_ticket,"为您选择第一趟航班可以吗
+为您预定东方航空07:45出发的航班可以吗？","Shall I select the first flight for you?
+Would you be comfortable with me booking the China Eastern Airlines flight that departs at 07:45 for you?"
+default_demand_destination,为您查询目的地是合肥的航班可以吗,Can I check if the flight to Hefei is available for you
+,,
+vague_demand_destination,请问您的具体目的地是哪？,May I ask what your specific destination is?
+vague_demand_departure_time,请问您的具体的出发时间是什么时候？,When exactly are you planning to leave?
+vague_demand_departure,请问您的具体出发地是哪？,Where exactly is your departure point?
+alter_demand_departure,"请问您是要修改出发地吗？
+请问您是要将出发地改为苏州还是增加苏州为备选出发地呢？
+请问您是要将出发地改为太原吗？","Would you like to change the departure location?
+Are you thinking of changing the departure city to Suzhou, or adding Suzhou as an additional choice?
+Are you considering changing the departure location to Taiyuan?"
+alter_demand_departure_time,"请问您是要修改出发时间吗？
+请问您是要将出发时间改为越快越好吗？
+请问您是要修改出发时间为17号和18号吗？
+请问您是要将出发时间改为周四还是增加周四为备选出发时间呢？
+请问您是要将出发时间改为周五吗？
+请问您是要将出发时间改为周四上午吗？","Are you considering altering the departure schedule?
+Would you like to change the departure time to the earliest possible option?
+Do you want to set the departure dates to the 17th and 18th?
+Are you thinking of changing the departure time to Thursday, or adding Thursday as an additional choice?
+Are you considering changing the departure time to Friday?
+Would you like to change the departure time to Thursday morning?"
+alter_demand_destination,"请问您是要将目的地改为杭州吗？
+请问您是要将目的地改为成都还是增加成都为备选目的地呢？
+请问您是要将目的地改为宁波吗？","Are you considering changing the destination to Hangzhou?
+Would you like to change the destination to Chengdu, or add Chengdu as an alternative destination?
+Are you considering changing the destination to Ningbo?"
+Irrelevant_demand,"抱歉，我无法满足您的这个需求。请问您要购买机票吗？
+对不起，我没有这个功能，请问您要买机票吗？
+抱歉，我无法回答您的问题。关于机票您还有其他需求吗？
+抱歉，我无法提供这一信息，请问您还有对机票的条件吗？
+抱歉，我无法满足您的这个需求。请问您要购买机票吗？
+抱歉，我无法满足您的这一条件。请问您是否还有其他机票的需求？
+抱歉，我无法回答您的问题。请问您的出发时间是什么时候？
+抱歉，我无法满足您的这个需求。请问您要购买机票吗？
+抱歉，我无法回答您的问题。关于机票您还有其他需求吗？
+抱歉，我无法回答您的这个问题，请问您对机票还有什么其他要求？","I'm sorry, but I can't meet this particular request. Would you like to purchase a flight ticket?
+I'm afraid I don't have this function. Are you interested in purchasing a flight ticket?
+I'm unable to respond to your question. Are there any other needs you have about the flight ticket?
+I can't provide this information. Do you have any other criteria for the flight ticket?
+I regret to say that I can't meet this request. Do you want to book a flight ticket?
+I regret to say that I can't meet this condition. Do you have any other demands for the flight ticket?
+I'm sorry, but I can't provide an answer to your question. When is your departure scheduled?
+I'm afraid I can't fulfill this specific need. Are you interested in buying a flight ticket?
+I'm sorry, but I can't provide an answer to your question. Are there any other demands you have regarding the flight ticket?
+I'm unable to respond to this question. Are there any other needs you have regarding the flight ticket?"
+error_demand,抱歉，我无法理解您的需求，请重新说明您的机票需求？,I'm unable to grasp your needs. Could you clarify your requirements for the flight ticket?
+notify_price_change,航班价格发生变动，是否继续预订？,The flight price has changed. Would you like to proceed?
+notify_seat_limited,该航班余票紧张，请尽快确认。,Limited seats available for this flight. Please confirm soon.
+notify_policy_info,请注意，该航班不支持退改签。,Please note that this flight is non-refundable and non-changeable.
+ask_discount_eligibility,您是否符合学生票或老年票优惠？,Are you eligible for a student or senior discount?
+confirm_passenger_num,请确认是否一共是两位乘客？,"Just to confirm, are there two passengers in total?"
+ask_luggage_needs,是否需要额外托运行李服务？,Would you like to add checked luggage service?
+recommend_alternative_time,当前时间段无票，是否查看其他时间？,No flights at your selected time. Would you like to see other options?
+recommend_nearby_airport,附近机场有更便宜的航班，是否查看？,Cheaper flights are available from a nearby airport. Would you like to check?
+confirm_name_spell,请确认乘客姓名拼写是否正确。,Please confirm if the passenger's name is spelled correctly.
+ask_invoice_need,是否需要开具发票？,Would you like an invoice?
+notify_timeout,长时间未收到回复，系统将暂时结束会话。,No response for a while. The session will end shortly.
+reconfirm_modified_info,信息已更新：目的地已更改为北京，是否确认？,Info updated: destination changed to Beijing. Please confirm.
+detect_duplicate_booking,检测到您已预订相似航班，是否继续？,A similar booking has been detected. Do you want to proceed?
+warn_illegal_input,您输入的信息格式有误，请重新输入。,The information format seems invalid. Please try again.
+provide_contact_support,若有其他问题，请联系人工客服协助。,"For further assistance, please contact our support team."
+prompt_continue_or_cancel,您想继续预订还是取消本次流程？,Would you like to continue or cancel this booking process?
+summarize_alternative_options,以下是为您推荐的三种替代方案。,Here are three alternative options recommended for you.
+guide_reentry_info,请您重新输入航班信息后再试一次。,Please re-enter the flight information and try again.
