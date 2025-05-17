@@ -22,6 +22,7 @@ Use `scripts/train.sh` to fine-tune with your own CRSA-style data.
 
 ```bash
 bash scripts/train.sh
+---
 
 ### 2. Merge LoRA into full model
 
