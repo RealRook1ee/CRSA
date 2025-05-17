@@ -50,20 +50,24 @@ A staged training strategy is used:
 
 ## 🏗️ Pipeline Overview
 
-###  LoRA Fine-tuning
+1. **LoRA Fine-tuning**  
+   Use `scripts/train.sh` to fine-tune the dialogue model using CRSA-style instruction-formatted data.
 
-Use `scripts/train.sh` to fine-tune with your own CRSA-style data.
+2. **Merge LoRA into full model**  
+   Use `scripts/merge.sh` to integrate LoRA adapters into the base model, producing a standalone model compatible with `transformers`.
 
-```bash
-bash scripts/train.sh
+3. **Run Inference**  
+   Use `scripts/infer.py` to generate system responses from structured dialogue history.
 
-Merge LoRA into full model.
+---
 
-bash scripts/merge.sh
+## 📂 Input Format
 
-Inference
+Each input sample follows the instruction-tuning format:
 
-python scripts/infer.py \
-  --model_path ./merged \
-  --input data/sample.json
-
+```json
+{
+  "instruction": "Please generate a system response based on the following conversation history.",
+  "input": "……",
+  "output": "……"
+}
