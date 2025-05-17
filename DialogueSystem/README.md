@@ -6,52 +6,62 @@ The model is trained using [LLaMA-Factory](https://github.com/hiyouga/llama-fact
 
 ---
 
-## 🚀 Model
+## 🔗 Model
 
-The trained weights are hosted on HuggingFace:
+The trained model weights are hosted on HuggingFace:
 
 👉 [https://huggingface.co/GrsXsa/CRSA-dialogue-baichuan2-7B](https://huggingface.co/GrsXsa/CRSA-dialogue-baichuan2-7B)
 
 ---
 
+## 🧠 Model Description
+
+This model is fine-tuned from Baichuan2-7B using the CRSA dataset and is capable of transforming structured annotations into high-quality system responses. To fully utilize the multi-layer annotations in CRSA, we designed a multi-source input framework that guides natural language generation with rich contextual semantics.
+
+The model receives four types of input:
+
+- **T**: Task Prompt – includes task description, database documents, formatting guidelines, and few-shot examples.
+- **H**: Historical Dialogue – full multi-turn context between user and system across all stages.
+- **M**: Annotations – structured fields like dialogue states, stages, and semantic analysis.
+- **K**: Key Annotations – explicitly highlighted features including user anomalies ($K_{\text{a}}$) and system actions ($K_{\text{s}}$) to control system behavior.
+
+In accordance with Section 4.3 of our paper, the model gives particular attention to $K_{\text{a}}$ and $K_{\text{s}}$, which are the primary drivers of context-aware and goal-aligned response generation.
+
+The conditional generation objective is:
+
+\[
+P(Y \mid T, H, M, K)
+\]
+
+The model is trained to optimize a weighted log-likelihood objective:
+
+\[
+\mathcal{L}(\theta) = \sum_{i=1}^{N} \left[ \alpha \cdot \log P(Y_i \mid K_i; \theta) + \beta \cdot \log P(Y_i \mid T_i, H_i, M_i; \theta) \right]
+\]
+
+where $\alpha > \beta$ emphasize the contribution of key annotations. Manual and automatic evaluation show that $\alpha:\beta = 2:1$ yields the best performance in slot coverage, annotation fidelity, and language fluency.
+
+A staged training strategy is used:
+1. Pretrain on (T, H, M) to build general understanding;
+2. Focused tuning on $K_{\text{a}}$, $K_{\text{s}}$;
+3. Final training on full input.
+
+---
+
 ## 🏗️ Pipeline Overview
 
-### 1. LoRA Fine-tuning
+###  LoRA Fine-tuning
 
 Use `scripts/train.sh` to fine-tune with your own CRSA-style data.
 
 ```bash
 bash scripts/train.sh
----
 
-### 2. Merge LoRA into full model
+Merge LoRA into full model to produce a standalone model compatible with transformers.
 
-python scripts/merge.sh \
-  --model_path ./trained \
-
-This will produce a standard model compatible with transformers for deployment.
-
-### 3. Run Inference
+Run Inference
 
 python scripts/infer.py \
   --model_path ./merged \
   --input data/sample.json
-
-## 🧪 Training Configuration
-Model: baichuan2-7B-chat
-
-Platform: LLaMA-Factory
-
-LoRA Rank: 8
-
-Batch Size: 2 × 4 GPUs
-
-Scheduler: cosine
-
-Epochs: 3
-
-Format: Instruction-tuning (single-round)
-
-## 📄 License
-This module is released under the CC BY 4.0 License.
 
