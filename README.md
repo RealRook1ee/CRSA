@@ -2,7 +2,7 @@
 
 CRSA is a Chinese single-domain task-oriented dialogue dataset focused on **airline ticket booking**. It contains **1,480** dialogue sessions and **12,136** utterances. The dataset supports fine-grained annotations over dialogue acts, slot values, task phases, user anomalies, and system control strategies. All dialogues follow a multi-turn, system-led task progression structure. CRSA offers a robust benchmark for training controllable, adaptive, and context-aware TOD systems.
 
-Refer to our paper for more details: [CRSA: A Chinese Task-Oriented Dialogue Dataset with Rich Contextual Semantic Annotations]
+Details are available in our EMNLP 2025 submission (currently under review).
 
 ## 🧰 Annotation Protocols
 
@@ -72,18 +72,27 @@ Captures the **last system-user interaction** with intent-level annotation:
 
 ### 🔹 `Slots`
 
-Final extracted task-relevant information for the session:
+Final extracted task-relevant information for the session.
+CRSA defines 15 task-relevant slot types to support comprehensive user intents and booking constraints. Each slot captures a specific aspect of the user's goal in airline ticket booking.Below are the slot definitions:
 
-```json
-{
-  "destination": "昆明",
-  "departure": "济南",
-  "departure_time": "19号下午",
-  "airlines": "",
-  "cabin": "",
-  "price": "",
-  ...
-}
+| Slot Name         | Description                                                              |
+| ----------------- | ------------------------------------------------------------------------ |
+| `departure`       | Departure city or location from which the user wishes to fly             |
+| `destination`     | Target city or location to which the user wants to travel                |
+| `departure_time`  | Preferred date and/or time of departure                                  |
+| `flight_duration` | Estimated or preferred duration of the flight                            |
+| `airport`         | Specific airport name or preference                                      |
+| `price`           | Price constraints                                                        |
+| `cabin`           | Preferred cabin class                                                    |
+| `transit`         | Whether the user prefers direct flights or allows transfer               |
+| `airlines`        | Preferred airline or carrier                                             |
+| `seat_type`       | Preferred seat location                                                  |
+| `meal`            | Whether the flight should include onboard meals                          |
+| `baggage`         | Free luggage allowance requirements or expectations                      |
+| `discount`        | User's concern or eligibility regarding discounts                        |
+| `round_trip`      | Whether the user requires a round-trip booking                           |
+| `personal_info`   | User's personal booking information                                      |
+
 ---
 
 ## ⚙️ Code
