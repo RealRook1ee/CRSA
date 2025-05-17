@@ -81,3 +81,14 @@ Be sure the instruction clearly specifies the required output structure (e.g., C
 
 Model supports both chat-style response and structured annotation generation.
 
+## 🔗 Model Weights
+
+Due to file size limitations, the model checkpoint file (`adapter_model.safetensors`) is hosted externally.
+
+Please download it from the following link:
+
+👉 [Download adapter_model.safetensors from HuggingFace](https://huggingface.co/yourusername/crsa-lora-model/resolve/main/adapter_model.safetensors)
+
+After downloading, place it in:
+
+CRSA/Annotation Model/model/adapter_model.safetensors
