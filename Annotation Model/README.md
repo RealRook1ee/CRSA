@@ -87,7 +87,7 @@ Due to file size limitations, the model checkpoint file (`adapter_model.safetens
 
 Please download it from the following link:
 
-👉 [Download adapter_model.safetensors from HuggingFace](https://huggingface.co/yourusername/crsa-lora-model/resolve/main/adapter_model.safetensors)
+👉 [Download adapter_model.safetensors from HuggingFace](https://huggingface.co/GrsXsa/CRSA-Annotation-baichuan2-7B/tree/main/adapter_model.safetensors)
 
 After downloading, place it in:
 
