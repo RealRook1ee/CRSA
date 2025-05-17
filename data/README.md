@@ -20,8 +20,7 @@ CRSA-Dataset/
 │ └── README.md # Description of data sources and cleaning procedures
 │
 ├── annotated_for_annotation_model/ # Used to train the automatic annotator
-│ ├── train.json # Instruction → structured annotation
-│ ├── valid.json
+│ ├── train.json
 │ ├── test.json
 │ └── sample_instruction_format.md # Instruction-format annotation example
 │
