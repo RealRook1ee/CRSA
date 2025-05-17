@@ -13,40 +13,20 @@ CRSA is a Chinese task-oriented dialogue dataset constructed under a structured 
 
 The repository contains the following components:
 
-CRSA-Dataset/
-├── raw_corpus/ # Original dialogues before annotation
-│ ├── real_user_dialogues.json # From real service logs
-│ ├── simulated_dialogues.json # From crowd-annotated and LLM-enhanced simulation
-│ └── README.md # Description of data sources and cleaning procedures
-│
-├── annotated_for_annotation_model/ # Used to train the automatic annotator
-│ ├── train.json
-│ ├── test.json
-│ └── sample_instruction_format.md # Instruction-format annotation example
-│
-├── annotated_for_dialogue_system/ # Used to train the dialogue generation model
-│ ├── train.json # Instruction → system response
-│ ├── valid.json
-│ ├── test.json
-│ └── prompt_design.md # Description of input structure (T, H, M, K)
-│
-├── schema/ # Slot schema and annotation conventions
-│ ├── slot_definitions.md
-│ ├── user_anomaly_types.md
-│ └── annotation_guidelines.pdf
-│
-└── LICENSE # License: CC BY 4.0
+| File Name                        | Description |
+|----------------------------------|-------------|
+| `AnnotationTrainData.json.zip`  | Training set for the CRSA structure prediction (annotation) model. Each sample is an instruction-input-output triple, where output is the structured annotation. |
+| `AnnotationTestData.json.zip`   | Test set used to evaluate the annotation model's structured generation performance. |
+| `SubtaskTrainData.json.zip`     | Subset of CRSA formatted to support various TOD subtask studies (e.g., DST, intent classification, anomaly detection). |
+| `SubtaskTestData.json.zip`      | Evaluation set for subtask-specific models in the TOD pipeline. |
+| `train.json.zip`                | Full CRSA training set with three-layer annotations (`Context`, `Dialogue`, `Slots`). |
+| `test.json.zip`                 | Full CRSA test set. Mirrors the structure and semantics of `train.json.zip`. |
+| `RawData.json.zip`              | Unlabeled dialogues collected from real-world scenarios, prior to any annotation or structure transformation. |
+| `user_utterances.zip`           | Crowdsourced user utterance variants for data augmentation and behavior simulation. Useful for user simulator or response rewriting tasks. |
+| `system_behaviours_inquiry.csv` | A curated reference of 63 system behaviors and their corresponding inquiry forms, covering the action space used in CRSA. Essential for modeling system-side dialogue policy and flow control. |
+| `anomaly_reasons.json`          | Complete taxonomy of user-side dialogue anomalies, with 6 major categories and 39 fine-grained types. Enables anomaly-aware response strategies and controllable generation. |
 
 ---
-
-## 🔍 Dataset Overview
-
-| Component                            | Description                                                                 |
-|-------------------------------------|-----------------------------------------------------------------------------|
-| `raw_corpus/`                       | Contains original dialogues collected from three sources: service logs, crowd simulation, and LLM generation |
-| `annotated_for_annotation_model/`  | Instruction-tuning dataset for training Baichuan2-based structure prediction model |
-| `annotated_for_dialogue_system/`   | Structured-response generation dataset for training a dialogue system |
-| `schema/`                           | Defines the slot-value schema, user behavior types, and annotation protocols |
 
 ---
 
@@ -72,10 +52,20 @@ Each turn is manually or automatically annotated with:
 
 ### For Automatic Annotation Training
 
-Use `annotated_for_annotation_model/*.json` with LLaMA-Factory or instruction-tuned models.
+Use `AnnotationTrainData.json` with LLaMA-Factory or instruction-tuned models.
 
 ### For Dialogue System Training
 
-Use `annotated_for_dialogue_system/*.json` with LLaMA-Factory or instruction-tuned models.
+Use `train.json` with LLaMA-Factory or instruction-tuned models.
 
+### For TOD subtasks Evaluation
 
+Use `SubtaskTrainData.json` with LLaMA-Factory or instruction-tuned models.
+
+### For User Simulator Training
+
+Use `user_utterances.zip` with LLaMA-Factory or instruction-tuned models.
+
+### For TOD related research on unlabeled corpus
+
+Use `RawData.json` with LLaMA-Factory or instruction-tuned models.
