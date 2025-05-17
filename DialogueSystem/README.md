@@ -57,9 +57,11 @@ Use `scripts/train.sh` to fine-tune with your own CRSA-style data.
 ```bash
 bash scripts/train.sh
 
-Merge LoRA into full model to produce a standalone model compatible with transformers.
+Merge LoRA into full model.
 
-Run Inference
+bash scripts/merge.sh
+
+Inference
 
 python scripts/infer.py \
   --model_path ./merged \
