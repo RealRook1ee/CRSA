@@ -95,19 +95,6 @@ CRSA defines 15 task-relevant slot types to support comprehensive user intents a
 
 ---
 
-## ⚙️ Code
-
-See `scripts/` for:
-- Data preprocessing
-- Format conversion
-- Metric evaluation (BLEU, ROUGE, TCR, ADFC, CRAM, etc.)
-
-See `auto_annotation/` for:
-- Baichuan2-based multi-task annotation model
-- Scripts for semi-automatic labeling
-
----
-
 ## 🧪 Evaluation & Benchmarks
 
 CRSA supports benchmarks for:
@@ -121,13 +108,7 @@ Example: LoRA-finetuned Baichuan2-7B achieves high TCR, ADFC, and CRAM when trai
 
 ---
 
-## 📈 Result
 
-![example](examples/visualization.png)
+## 📚 License
 
----
-
-## 📚 Citation
-
-📄 License
 This dataset is released under the CC BY 4.0 License.
