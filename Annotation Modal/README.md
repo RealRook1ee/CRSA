@@ -49,8 +49,35 @@ Frameworks used:
 
 ## 🚀 Run Inference
 
+This model is designed to annotate raw user-system dialogues in CRSA format using instruction-based prompting. It follows the **instruction-tuning format** used by LLaMA-Factory, where each sample includes:
+
+- `instruction`: task description + schema constraint
+- `input`: raw dialogue content
+- `output`: structured JSON annotation in CRSA format
+
+To generate annotations for new dialogues:
+
 ```bash
 python run_inference.py \
-  --input sample_input.json \
-  --output sample_output.json \
+  --input raw_dialogues.json \
+  --output annotated_results.json \
   --model_dir ./model/checkpoint
+
+##🔹 Input Format
+Each input sample must be a dictionary in the following structure:
+
+{
+  "instruction": "Please analyze and annotate the following dialogue. The output must follow the CRSA JSON format: {\"Context\": {\"basic_information\": {\"current_step\": true, \"utterances\": [], \"slots\": {\"destination\": \"\", \"departure\": \"\", \"airport\": \"\", \"departure_time\": \"\", \"airlines\": \"\", \"cabin\": \"\", \"price\": \"\", \"flight_duration\": \"\", \"arrival_time\": \"\"}}, \"ticket_selection\": {\"current_step\": false, \"utterances\": [], \"ticket_options\": [], \"user_choice\": {}}, \"booking_information\": {\"current_step\": false, \"utterances\": [], \"personal_information\": {\"name\": \"\", \"id_number\": \"\", \"phone_number\": \"\"}}}, \"Dialogue\": {\"agenda\": {\"current_step\": \"basic_information\", \"utterances\": \"\", \"analysis\": {\"question\": \"\", \"statements\": []}}, \"user\": {\"utterances\": \"\", \"anomaly_analysis\": {\"has_anomaly\": false, \"anomaly_reason\": \"\"}}}, \"Slots\": {\"destination\": \"\", \"departure\": \"\", \"airport\": \"\", \"departure_time\": \"\", \"airlines\": \"\", \"cabin\": \"\", \"price\": \"\", \"flight_duration\": \"\", \"arrival_time\": \"\"}}",
+  "input": "系统：您好，请问您需要订票吗？\n用户：我想订一张从成都到拉萨的机票。\n......",
+  "output": "{ \"Context\": {...}, \"Dialogue\": {...}, \"Slots\": {...} }"
+}
+
+##📚 Notes
+This model was trained using LLaMA-Factory with LoRA and instruction-tuning format.
+
+You may batch multiple samples into one .json list file for inference.
+
+Be sure the instruction clearly specifies the required output structure (e.g., CRSA schema).
+
+Model supports both chat-style response and structured annotation generation.
+
