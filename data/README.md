@@ -13,7 +13,7 @@ CRSA is a Chinese task-oriented dialogue dataset constructed under a structured 
 
 The repository contains the following components:
 
-data/
+CRSA-Dataset/
 ├── raw_corpus/ # Original dialogues before annotation
 │ ├── real_user_dialogues.json # From real service logs
 │ ├── simulated_dialogues.json # From crowd-annotated and LLM-enhanced simulation
@@ -36,7 +36,7 @@ data/
 │ ├── user_anomaly_types.md
 │ └── annotation_guidelines.pdf
 │
-└── LICENSE
+└── LICENSE # License: CC BY 4.0
 
 ---
 
