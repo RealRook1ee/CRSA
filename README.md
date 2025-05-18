@@ -1,6 +1,6 @@
 # CRSA
 
-CRSA is a Chinese single-domain task-oriented dialogue dataset focused on **airline ticket booking**. It contains **1,480** dialogue sessions and **12,136** utterances. The dataset supports fine-grained annotations over dialogue acts, slot values, task phases, user anomalies, and system control strategies. All dialogues follow a multi-turn, system-led task progression structure. CRSA offers a robust benchmark for training controllable, adaptive, and context-aware TOD systems.
+CRSA is a Chinese single-domain task-oriented dialogue dataset focused on **airline ticket booking**. It contains **1,480** dialogue sessions and **26,048** utterances. The dataset supports fine-grained annotations over dialogue acts, slot values, task phases, user anomalies, and system control strategies. All dialogues follow a multi-turn, system-led task progression structure. CRSA offers a robust benchmark for training controllable, adaptive, and context-aware TOD systems.
 
 Details are available in our EMNLP 2025 submission (currently under review).
 
@@ -20,11 +20,11 @@ In `data/` directory. CRSA data includes JSON-formatted files: `train.json`, `va
 
 Data statistics:
 
-| Split    | Dialogues | Turns  | Avg. Turns | Avg. Slots | Avg. Values |
-|----------|-----------|--------|------------|------------|-------------|
-| Train    | 1,100     | ~9,000 | 17.5       | 15         | 1670        |
-| Valid    | 190       | ~1,540 | 17.5       | 15         | 1670        |
-| Test     | 190       | ~1,600 | 17.5       | 15         | 1670        |
+| Split    | Dialogues | Turns   | Avg. Turns | Avg. Slots | Avg. Values |
+|----------|-----------|---------|------------|------------|-------------|
+| Train    | 1,100     | ~18,838 | 17.1       | 14.8       | 1670        |
+| Valid    | 190       | ~3,427  | 18.0       | 15.2       | 1670        |
+| Test     | 190       | ~3,783  | 19.9       | 15.2       | 1670        |
 
 ## 🎯 Goal Types and Statistics
 
@@ -41,6 +41,71 @@ We define different dialogue types based on user behavior and goal structure:
 ## 📂 Data Format
 
 Each annotated dialogue consists of the following structure:
+{
+    "Context": {
+      "basic_information": {
+        "current_step": false,
+        "utterances": [...],
+        "slots": {...}
+      },
+      "ticket_selection": {
+        "current_step": true,
+        "utterances": [...],
+        "ticket_options": [...],
+        "user_choice": {}
+      },
+      "booking_information": {
+        "current_step": false,
+        "utterances": [],
+        "personal_information": {...}
+      }
+    },
+    "Dialogue": {
+      "agenda": {
+        "current_step": "ticket_selection",
+        "utterances": "",
+        "analysis": {
+          "question": ".",
+          "system_Dialogue_action": ""
+        }
+      },
+      "user": {
+        "utterances": "",
+        "anomaly_analysis": {
+          "has_anomaly": false,
+          "anomaly_reason": ""
+        }
+      }
+    },
+    "Slots": {
+      "destination": "",
+      "departure": "",
+      "departure_time": "",
+      "airport": "",
+      "price": "",
+      "airlines": "",
+      "cabin": "",
+      "name": "",
+      "ID": "",
+      "Infant_or_not": "",
+      "seat_type: "",
+      "transit": "",
+      "discount": "",
+      "meal": "",
+      "baggage": ""
+    }
+  },
+  "output": {
+    "system_dialogue_act": "",
+    "utterances": "",
+    "control": {
+      "style": "kind",
+      "query": "brief",
+      "deviation": "skip",
+      "flow": "Slots-seq-2"
+    }
+  }
+}
 
 ### 🔹 `Context`
 
@@ -73,7 +138,11 @@ Captures the **last system-user interaction** with intent-level annotation:
 ### 🔹 `Slots`
 
 Final extracted task-relevant information for the session.
-CRSA defines 15 task-relevant slot types to support comprehensive user intents and booking constraints. Each slot captures a specific aspect of the user's goal in airline ticket booking.Below are the slot definitions:
+CRSA defines 15 task-relevant slot types to support comprehensive user intents and booking constraints. 
+
+Each slot captures a specific aspect of the user's goal in airline ticket booking.
+
+Below are the slot definitions:
 
 | Slot Name         | Description                                                              |
 | ----------------- | ------------------------------------------------------------------------ |
@@ -103,8 +172,6 @@ CRSA supports benchmarks for:
 - System Response Generation
 - Controllable Response (flow, style, query)
 - User Simulation
-
-Example: LoRA-finetuned Baichuan2-7B achieves high TCR, ADFC, and CRAM when trained on CRSA.
 
 ---
 
