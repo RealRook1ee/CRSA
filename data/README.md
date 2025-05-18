@@ -88,7 +88,7 @@ Each turn is manually or automatically annotated with:
       "agenda": {
         "current_step": "basic_information",
         "utterances": "",
-        "analysis": {"question": "", "system_Dialogue_action": ,}
+        "analysis": {"question": "", "system_action": ""}
       },
       "user": {
         "utterances": "",
