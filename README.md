@@ -10,7 +10,8 @@ We provide structured annotation protocols (Appendix A of our paper), including:
 
 - `data/system_guideline.md`: System-side behavior and flow control rules
 - `data/user_guideline.md`: User-side expression and task goal guidance
-- `data/anomaly_definitions.md`: Six types of user anomalies and system response strategies
+- `data/anomaly_reasons.json`: Six types of user anomalies and system response strategies
+- `data/system_behaviours_inquiry.csv`: 63 kinds of system behavior and its example questioning method
 
 ---
 
