@@ -8,9 +8,9 @@ Details are available in our EMNLP 2025 submission (currently under review).
 
 We provide structured annotation protocols (Appendix A of our paper), including:
 
-- `annotation_guidelines/system_guideline.md`: System-side behavior and flow control rules
-- `annotation_guidelines/user_guideline.md`: User-side expression and task goal guidance
-- `annotation_guidelines/anomaly_definitions.md`: Six types of user anomalies and system response strategies
+- `data/system_guideline.md`: System-side behavior and flow control rules
+- `data/user_guideline.md`: User-side expression and task goal guidance
+- `data/anomaly_definitions.md`: Six types of user anomalies and system response strategies
 
 ---
 
