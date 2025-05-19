@@ -6,12 +6,15 @@ Details are available in our EMNLP 2025 submission (currently under review).
 
 ## 🧰 Annotation Protocols
 
-We provide structured annotation protocols (Appendix A of our paper), including:
+We provide structured annotation protocols to support dialogue simulation and labeling (see Appendix A of our paper):
 
 - `data/system_guideline.md`: System-side behavior and flow control rules
 - `data/user_guideline.md`: User-side expression and task goal guidance
+- `data/system_guideline.md` and `data/user_guideline.md` serve as simulation guides for crowdsourced workers during data collection. They also serve as references for consistent annotation.
 - `data/anomaly_reasons.json`: Six types of user anomalies and system response strategies
 - `data/system_behaviours_inquiry.csv`: 63 kinds of system behavior and its example questioning method
+
+Details of the full annotation schema and implementation can be found in data/README.md.
 
 ---
 
